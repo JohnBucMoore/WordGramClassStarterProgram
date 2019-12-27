@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class WordGram {
     private String[] myWords;
@@ -16,29 +17,41 @@ public class WordGram {
     }
 
     public int length(){
-        // TODO: Complete this method
-        return 0;
+        return myWords.length;
     }
 
     public String toString(){
         String ret = "";
-        // TODO: Complete this method
-
+        for (int i = 0; i < myWords.length; i++) {
+            ret += myWords[i] + " ";
+        }
         return ret.trim();
     }
 
     public boolean equals(Object o) {
         WordGram other = (WordGram) o;
-        // TODO: Complete this method
+        if (this.length() != other.length()) {
+            return false;
+        }
+        for (int i = 0; i < myWords.length; i++) {
+            if (! myWords[i].equals(other.wordAt(i))) {
+                return false;
+            }
+        }
         return true;
-
     }
 
-    public WordGram shiftAdd(String word) {	
-        WordGram out = new WordGram(myWords, 0, myWords.length);
+    public WordGram shiftAdd(String word) {
+        String[] shifted = new String[myWords.length];
+        for (int i = 0; i < myWords.length - 1; i++) {
+            shifted[i] = myWords[i+1];
+        }
+        shifted[myWords.length - 1] = word;
+        //System.out.println(Arrays.asList(myWords).toString());
+        //System.out.println(Arrays.asList(shifted).toString());
+        WordGram out = new WordGram(shifted, 0, shifted.length);
         // shift all words one towards 0 and add word at the end. 
         // you lose the first word
-        // TODO: Complete this method
         return out;
     }
 
