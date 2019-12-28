@@ -55,4 +55,7 @@ public class WordGram {
         return out;
     }
 
+    public int hashCode() {
+        return this.toString().hashCode();
+    }
 }
