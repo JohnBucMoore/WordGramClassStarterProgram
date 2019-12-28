@@ -45,8 +45,13 @@ public class WordGramTester {
 		mr.runMarkov();
 	}
 
+	public void testEfficientMarkovWord() {
+		MarkovRunner mr = new MarkovRunner();
+		mr.testHashMap();
+	}
+
 	public static void main(String[] args) {
 		WordGramTester w = new WordGramTester();
-		w.testMarkovWordWithWordGram();
+		w.testEfficientMarkovWord();
 	}
 }
