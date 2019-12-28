@@ -40,8 +40,13 @@ public class WordGramTester {
 		WordGram next3 = next2.shiftAdd("again");
 	}
 
+	public void testMarkovWordWithWordGram() {
+		MarkovRunner mr = new MarkovRunner();
+		mr.runMarkov();
+	}
+
 	public static void main(String[] args) {
 		WordGramTester w = new WordGramTester();
-		w.testShiftAdd();
+		w.testMarkovWordWithWordGram();
 	}
 }

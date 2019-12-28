@@ -29,11 +29,13 @@ public class MarkovRunner {
     } 
 
     public void runMarkov() { 
-        FileResource fr = new FileResource(); 
+        FileResource fr = new FileResource("data/confucius.txt");
         String st = fr.asString(); 
         st = st.replace('\n', ' '); 
         //MarkovWordOne markovWord = new MarkovWordOne(); 
-        //runModel(markovWord, st, 200); 
+        //runModel(markovWord, st, 200);
+        MarkovWord m = new MarkovWord(3);
+        runModel(m, st, 200, 643);
     } 
 
     private void printOut(String s){
